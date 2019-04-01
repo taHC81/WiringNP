@@ -151,8 +151,9 @@ static int getAllwinnerBoardID(char* boardId, int boardIdMaxLen )
     FILE *f;
     int ret = -1;
 
-    if (!(f = fopen("/sys/class/sunxi_info/sys_info", "r"))) {
-        LOGE("open /sys/class/sunxi_info/sys_info failed.");
+    //if (!(f = fopen("/sys/class/sunxi_info/sys_info", "r"))) {
+    if (!(f = fopen("/etc/sys_info", "r"))) {
+        LOGE("open /etc/sys_info failed. Please create one with content from https://forum.armbian.com/topic/5647-nanopi-neo-wiringnp-missing-sunxi_infosys_info/?tab=comments#comment-46415");
         return -1;
     }
 
